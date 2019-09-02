@@ -71,7 +71,7 @@ public class AdderServer {
                 if (i % 10 == 0) {
                     Response resp = Response.newBuilder()
                             .setResponse(sum)
-                            .setPercentComplete((i - start + 1)/(end - start + 1))
+                            .setPercentComplete(((float)(i - start + 1))/(end - start + 1))
                             .build();
                     System.out.println("Emitting output: " + resp.getResponse() + " after completion percentage " + resp.getPercentComplete() * 100);
                     responseObserver.onNext(resp);
